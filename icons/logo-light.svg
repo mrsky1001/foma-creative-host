@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" fill="#000000">
+  <!-- F: Geometric block with triangle -->
+  <path d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z"/>
+  <!-- O: Circle -->
+  <circle cx="115" cy="60" r="26"/>
+  <!-- M: V-chevron block -->
+  <path d="M90,110 L115,135 L140,110 V160 H90 Z"/>
+  <!-- A: Triangle with vertical slit -->
+  <path d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd"/>
+</svg>

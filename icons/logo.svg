@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200">
+  <defs>
+    <linearGradient id="fomaThemeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fd74ff" />
+      <stop offset="100%" stop-color="#4B7FFC" />
+    </linearGradient>
+    <style>
+      .logo-shadow {
+        fill: var(--logo-shadow-fill, #64748b);
+      }
+      .logo-front {
+        fill: var(--logo-fill, #18181b);
+        transition: fill 0.3s ease;
+      }
+      svg:hover .logo-front {
+        fill: url(#fomaThemeGradient);
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-shadow {
+          fill: var(--logo-shadow-fill, #52525b);
+        }
+        .logo-front {
+          fill: var(--logo-fill, #ffffff);
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- F: Geometric staircase block with triangle -->
+  <g class="logo-part--f">
+    <path class="logo-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(5, 3.5)"/>
+    <path class="logo-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(2.5, 1.75)" opacity="0.7"/>
+    <path class="logo-front" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z"/>
+  </g>
+
+  <!-- O: Circle -->
+  <g class="logo-part--o">
+    <circle class="logo-shadow" cx="115" cy="60" r="26" transform="translate(5, 3.5)"/>
+    <circle class="logo-shadow" cx="115" cy="60" r="26" transform="translate(2.5, 1.75)" opacity="0.7"/>
+    <circle class="logo-front" cx="115" cy="60" r="26"/>
+  </g>
+
+  <!-- M: V-chevron block -->
+  <g class="logo-part--m">
+    <path class="logo-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(5, 3.5)"/>
+    <path class="logo-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(2.5, 1.75)" opacity="0.7"/>
+    <path class="logo-front" d="M90,110 L115,135 L140,110 V160 H90 Z"/>
+  </g>
+
+  <!-- A: Triangle with vertical slit cutout -->
+  <g class="logo-part--a">
+    <path class="logo-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(5, 3.5)"/>
+    <path class="logo-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(2.5, 1.75)" opacity="0.7"/>
+    <path class="logo-front" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd"/>
+  </g>
+</svg>

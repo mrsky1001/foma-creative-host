@@ -1,0 +1,1 @@
+import{s as l}from"./detectLocale.-L9zab28.js";const r=document.querySelectorAll(".language-switcher");r.forEach(c=>{c.addEventListener("click",a=>{const e=a.target.closest(".language-switcher__link");if(!e)return;const t=e.dataset.locale;t&&l(t)})});

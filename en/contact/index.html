@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" type="image/svg+xml" href="/icons/logo.svg"><meta name="generator" content="Astro v5.16.6"><!-- Theme Color for browser UI (status bar, etc.) --><!-- Light mode theme color --><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><!-- Dark mode theme color - matches --bg-primary in dark theme --><meta name="theme-color" content="#0f0f1a" media="(prefers-color-scheme: dark)"><!-- Fallback theme color for manual theme switching (updated by JS) --><meta name="theme-color" id="meta-theme-color" content="#ffffff"><!-- iOS Safari Specific --><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="foma-creative-studio"><meta name="author" content="Никита и Анастасия Коляда"><meta name="content-language" content="en"><!-- Theme & Palette Detection Script (inline to prevent FOUC) --><script>
+  (function () {
+    const STORAGE_KEY = "__foma-creative-studio_theme";
+    const PALETTE_KEY = "__foma-creative-studio_palette";
+    const MIGRATION_KEY = "__foma_azure_default_v1";
+
+    // One-time migration: ensure all visitors start with the new Azure theme
+    try {
+      if (!localStorage.getItem(MIGRATION_KEY)) {
+        localStorage.setItem(MIGRATION_KEY, "1");
+        localStorage.setItem(PALETTE_KEY, "azure");
+      }
+    } catch (e) {}
+
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    // Determine if dark theme should be applied:
+    // 1) Saved theme is dark ("1"), or 2) No saved theme and system prefers dark
+    const isDark = savedTheme === "1" || (savedTheme === null && prefersDark);
+
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    // Apply saved palette before render (default to azure)
+    const savedPalette = localStorage.getItem(PALETTE_KEY);
+    const VALID = ["azure", "default", "mono", "purple", "coral", "burgundy", "amber"];
+    if (savedPalette && VALID.includes(savedPalette)) {
+      document.documentElement.setAttribute("data-palette", savedPalette);
+    } else {
+      document.documentElement.setAttribute("data-palette", "azure");
+    }
+
+    // Palette-specific dark bg colors for meta-theme-color
+    const PALETTE_DARK_BG = {
+      azure: "#101010",
+      default: "#0f0f1a",
+      mono: "#0f0f1a",
+      purple: "#0E0E14",
+      coral: "#12121A",
+      burgundy: "#12121A",
+      amber: "#14140F",
+    };
+    const palette = (savedPalette && VALID.includes(savedPalette)) ? savedPalette : "azure";
+
+    // Update the fallback theme-color meta tag to match the current theme
+    // This ensures iOS Safari status bar matches when user manually toggles theme
+    const themeColorMeta = document.getElementById("meta-theme-color");
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute(
+        "content",
+        isDark ? PALETTE_DARK_BG[palette] || "#101010" : "#ffffff"
+      );
+    }
+  })();
+</script><!-- Alternate Language Links --><link rel="alternate" hreflang="ru" href="https://foma-creative.com/ru/contact/"><link rel="alternate" hreflang="en" href="https://foma-creative.com/en/contact/"><link rel="alternate" hreflang="es" href="https://foma-creative.com/es/contact/"><link rel="alternate" hreflang="x-default" href="https://foma-creative.com/ru/contact/"><!-- Font Preloads & Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Josefin+Sans:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="preload" href="/fonts/NEXTARTBold.woff" as="font" type="font/woff" crossorigin><!-- External Stylesheets --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"><!-- Canonical URL --><link rel="canonical" href="https://foma-creative.com/en/contact/"><!-- Primary Meta Tags --><title>Send Message — FOMA Creative Studio</title><meta name="title" content="Send Message — FOMA Creative Studio"><meta name="description" content="FOMA Creative Studio Portfolio — Design, Photo, Video Editing, IT Development, 3D Modeling"><meta name="keywords" content="portfolio, foma creative, design, web development, motion, 3d modeling"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://foma-creative.com/en/contact/"><meta property="og:title" content="Send Message — FOMA Creative Studio"><meta property="og:description" content="FOMA Creative Studio Portfolio — Design, Photo, Video Editing, IT Development, 3D Modeling"><meta property="og:image" content="https://foma-creative.com/banner.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="foma-creative-studio"><meta property="og:locale" content="en_US"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://foma-creative.com/en/contact/"><meta name="twitter:title" content="Send Message — FOMA Creative Studio"><meta name="twitter:description" content="FOMA Creative Studio Portfolio — Design, Photo, Video Editing, IT Development, 3D Modeling"><meta name="twitter:image" content="https://foma-creative.com/banner.png"><!-- Search Engine Verification --><meta name="yandex-verification" content="f011f6670b5d713b"><meta name="yandex-verification" content="6dbc8ec9a2829793"><meta name="google-site-verification" content="8k_q4IdH3yvxTEmykheLJl9hXggv7CZkyc1hN34dLi0"><!-- Analytics Scripts --><!-- Yandex.Metrika counter --><script type="text/javascript">(function(){const yandexMetrikaId = 99151134;
+
+  (function (m, e, t, r, i, k, a) {
+    m[i] =
+      m[i] ||
+      function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) {
+        return;
+      }
+    }
+    ((k = e.createElement(t)),
+      (a = e.getElementsByTagName(t)[0]),
+      (k.async = 1),
+      (k.src = r),
+      a.parentNode.insertBefore(k, a));
+  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(yandexMetrikaId, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true,
+  });
+})();</script> <!-- Yandex.RTB --><script type="module">window.yaContextCb=window.yaContextCb||[];</script> <script src="https://yandex.ru/ads/system/context.js" async></script> <noscript><div><img src="https://mc.yandex.ru/watch/99151134" class="sr-only-offscreen" alt=""></div></noscript><!-- /Yandex.Metrika counter --><link rel="stylesheet" href="/_astro/contact.DFw_0dDy.css">
+<link rel="stylesheet" href="/_astro/contact.BM1fAB3S.css"></head> <body id="contactBody"> <header> <!-- Desktop Navigation --> <nav id="navbar" class="navbar uppercase"> <div class="nav-list nav-list--main"> <div class="nav-list"> <a class="link--dark nav-item logo" href="/en" title="Home"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" height="33" aria-label="FOMA Creative Studio" role="img" class="logo-svg"> <defs> <linearGradient id="fomaThemeGradient" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" style="stop-color: var(--gradient-stop-1, #3B83BD)"></stop> <stop offset="100%" style="stop-color: var(--gradient-stop-2, #5AA0D3)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon gradient across the entire logo --> <linearGradient id="fomaBurgundyHoverGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-stop-1, #ea2e75)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-stop-2, #9d46e5)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-stop-3, #00b4d8)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon shadow gradient --> <linearGradient id="fomaBurgundyHoverShadowGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-shadow-1, #580827)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-shadow-2, #2b1554)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-shadow-3, #07355c)"></stop> </linearGradient> </defs> <!-- F: Geometric staircase block with triangle --> <g class="logo-part logo-part--f"> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z"></path> </g> <!-- O: Circle --> <g class="logo-part logo-part--o"> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(5, 3.5)"></circle> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(2.5, 1.75)" opacity="0.7"></circle> <circle class="logo-part-front" cx="115" cy="60" r="26"></circle> </g> <!-- M: V-chevron block --> <g class="logo-part logo-part--m"> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M90,110 L115,135 L140,110 V160 H90 Z"></path> </g> <!-- A: Triangle with vertical slit cutout --> <g class="logo-part logo-part--a"> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd"></path> </g> </svg> </a> <a class="link--dark nav-item" href="/en/portfolio" title="Company Portfolio"> <span>Portfolio</span> </a><a class="link--dark nav-item" href="/en/blog/" title="Blog"> <span>Blog</span> </a><a class="link--dark nav-item" href="/en/#about" title="Contacts"> <span>Contacts</span> </a> </div> <div class="nav-list"> <a class="link social nav-item" href="/en/store" title="Store"> <i class="fa-solid fa-store"></i> </a> <a target="_blank" class="link social nav-item" href="https://t.me/foma_des" title="Contact"> <i class="fa-brands fa-telegram"></i> </a><a target="_blank" class="link social nav-item" href="https://www.instagram.com/foma_des" title="Photos"> <i class="fa-brands fa-instagram"></i> </a> <div class="nav-divider">|</div> <div class="language-switcher"> <a href="/ru/contact/" class="language-switcher__link " title="Русский" aria-label="Switch to Русский" data-locale="ru"> ru </a><a href="/en/contact/" class="language-switcher__link language-switcher__link--active" title="English" aria-label="Switch to English" data-locale="en"> en </a><a href="/es/contact/" class="language-switcher__link " title="Español" aria-label="Switch to Español" data-locale="es"> es </a> </div> <script type="module" src="/_astro/LanguageSwitcher.astro_astro_type_script_index_0_lang.DQgnwUhQ.js"></script> <div class="nav-divider">|</div> <div class="palette-switcher"> <button class="palette-trigger" id="paletteTrigger" aria-haspopup="true" aria-expanded="false" title="Color palette"> <span class="palette-trigger__dot"></span> <i class="fa-solid fa-chevron-down palette-trigger__arrow"></i> </button> <div class="palette-dropdown" id="paletteDropdown"> <button class="palette-btn palette-btn--active" data-palette="azure" style="--dot-c1: #3B83BD; --dot-c2: #2E6B9E;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Azure</span> </button><button class="palette-btn " data-palette="coral" style="--dot-c1: #D85A30; --dot-c2: #378ADD;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Coral</span> </button><button class="palette-btn " data-palette="default" style="--dot-c1: #fd74ff; --dot-c2: #4B7FFC;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Cyber</span> </button><button class="palette-btn " data-palette="mono" style="--dot-c1: #333333; --dot-c2: #999999;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Mono</span> </button><button class="palette-btn " data-palette="purple" style="--dot-c1: #7F77DD; --dot-c2: #5A4FBB;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Purple</span> </button><button class="palette-btn " data-palette="burgundy" style="--dot-c1: #C43872; --dot-c2: #2E78C8;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Burgundy</span> </button><button class="palette-btn " data-palette="amber" style="--dot-c1: #EF9F27; --dot-c2: #97C459;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Amber</span> </button> </div> </div> <div class="nav-divider">|</div> <div class="theme-switcher"> <button class="theme-btn theme-btn--light" title="Light"> Light </button> <button class="theme-btn theme-btn--dark" title="Dark"> Dark </button> </div> </div> </div> </nav> <!-- Mobile Navigation --> <nav id="mobileNav" class="mobile-nav"> <!-- Mobile Header Bar --> <div class="mobile-nav__header"> <!-- Logo Button (Home link) on left --> <a class="mobile-nav__logo" href="/en" title="Home"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" height="33" aria-label="FOMA Creative Studio" role="img" class="logo-svg"> <defs> <linearGradient id="fomaThemeGradient" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" style="stop-color: var(--gradient-stop-1, #3B83BD)"></stop> <stop offset="100%" style="stop-color: var(--gradient-stop-2, #5AA0D3)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon gradient across the entire logo --> <linearGradient id="fomaBurgundyHoverGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-stop-1, #ea2e75)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-stop-2, #9d46e5)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-stop-3, #00b4d8)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon shadow gradient --> <linearGradient id="fomaBurgundyHoverShadowGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-shadow-1, #580827)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-shadow-2, #2b1554)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-shadow-3, #07355c)"></stop> </linearGradient> </defs> <!-- F: Geometric staircase block with triangle --> <g class="logo-part logo-part--f"> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z"></path> </g> <!-- O: Circle --> <g class="logo-part logo-part--o"> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(5, 3.5)"></circle> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(2.5, 1.75)" opacity="0.7"></circle> <circle class="logo-part-front" cx="115" cy="60" r="26"></circle> </g> <!-- M: V-chevron block --> <g class="logo-part logo-part--m"> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M90,110 L115,135 L140,110 V160 H90 Z"></path> </g> <!-- A: Triangle with vertical slit cutout --> <g class="logo-part logo-part--a"> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd"></path> </g> </svg> </a> <!-- Center contacts (Email & Telegram) --> <div class="mobile-nav__center-contacts"> <a class="mobile-nav__contact-btn" href="/en/#about" title="Send Email"> <i class="fa-solid fa-envelope"></i> </a> <a target="_blank" rel="noopener noreferrer" class="mobile-nav__contact-btn" href="https://t.me/foma_des" title="Photos"> <i class="fa-brands fa-telegram"></i> </a> </div> <!-- Hamburger Button on right --> <button id="barsBtn" class="mobile-nav__hamburger" aria-label="Toggle menu" aria-expanded="false"> <span class="hamburger-line hamburger-line--top"></span> <span class="hamburger-line hamburger-line--middle"></span> <span class="hamburger-line hamburger-line--bottom"></span> </button> </div> <!-- Mobile Menu Overlay --> <div id="navOverlay" class="mobile-nav__overlay"></div> <!-- Mobile Menu Panel --> <div id="navSideBlock" class="mobile-nav__menu"> <div class="mobile-nav__menu-content"> <!-- Settings Blocks --> <div class="mobile-nav__settings-container"> <!-- Language Block --> <div class="mobile-nav__settings-block"> <span class="mobile-nav__settings-label"> <i class="fa-solid fa-globe"></i> Language </span> <div class="language-switcher mobile-nav__setting-item"> <a href="/ru/contact/" class="language-switcher__link " title="Русский" aria-label="Switch to Русский" data-locale="ru"> ru </a><a href="/en/contact/" class="language-switcher__link language-switcher__link--active" title="English" aria-label="Switch to English" data-locale="en"> en </a><a href="/es/contact/" class="language-switcher__link " title="Español" aria-label="Switch to Español" data-locale="es"> es </a> </div>  </div> <!-- Theme Block --> <div class="mobile-nav__settings-block"> <span class="mobile-nav__settings-label"> <i class="fa-solid fa-circle-half-stroke"></i> Theme </span> <div class="mobile-nav__settings-group"> <div class="theme-switcher mobile-nav__setting-item"> <button class="theme-btn theme-btn--light" title="Light"> Light </button> <button class="theme-btn theme-btn--dark" title="Dark"> Dark </button> </div> <div class="mobile-nav__settings-divider"></div> <div class="palette-switcher"> <button class="palette-trigger" id="paletteTrigger" aria-haspopup="true" aria-expanded="false" title="Color palette"> <span class="palette-trigger__dot"></span> <i class="fa-solid fa-chevron-down palette-trigger__arrow"></i> </button> <div class="palette-dropdown" id="paletteDropdown"> <button class="palette-btn palette-btn--active" data-palette="azure" style="--dot-c1: #3B83BD; --dot-c2: #2E6B9E;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Azure</span> </button><button class="palette-btn " data-palette="coral" style="--dot-c1: #D85A30; --dot-c2: #378ADD;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Coral</span> </button><button class="palette-btn " data-palette="default" style="--dot-c1: #fd74ff; --dot-c2: #4B7FFC;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Cyber</span> </button><button class="palette-btn " data-palette="mono" style="--dot-c1: #333333; --dot-c2: #999999;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Mono</span> </button><button class="palette-btn " data-palette="purple" style="--dot-c1: #7F77DD; --dot-c2: #5A4FBB;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Purple</span> </button><button class="palette-btn " data-palette="burgundy" style="--dot-c1: #C43872; --dot-c2: #2E78C8;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Burgundy</span> </button><button class="palette-btn " data-palette="amber" style="--dot-c1: #EF9F27; --dot-c2: #97C459;"> <span class="palette-btn__dot"></span> <span class="palette-btn__label">Amber</span> </button> </div> </div> </div> </div> </div> <!-- Menu Items --> <ul class="mobile-nav__list"> <li class="mobile-nav__item" style="--i: 0"> <a class="mobile-nav__link" href="/en/portfolio" title="Company Portfolio"> <span class="mobile-nav__link-icon"> <i class="fa-solid fa-briefcase"></i> </span> <span class="mobile-nav__link-text"> Portfolio </span> <span class="mobile-nav__link-arrow"> <i class="fa-solid fa-chevron-right"></i> </span> </a> </li><li class="mobile-nav__item" style="--i: 1"> <a class="mobile-nav__link" href="/en/store" title="Store"> <span class="mobile-nav__link-icon"> <i class="fa-solid fa-store"></i> </span> <span class="mobile-nav__link-text"> Store </span> <span class="mobile-nav__link-arrow"> <i class="fa-solid fa-chevron-right"></i> </span> </a> </li><li class="mobile-nav__item" style="--i: 2"> <a class="mobile-nav__link" href="/en/blog/" title="Blog"> <span class="mobile-nav__link-icon"> <i class="fa-solid fa-blog"></i> </span> <span class="mobile-nav__link-text"> Blog </span> <span class="mobile-nav__link-arrow"> <i class="fa-solid fa-chevron-right"></i> </span> </a> </li><li class="mobile-nav__item" style="--i: 3"> <a class="mobile-nav__link" href="/en/#about" title="Contacts"> <span class="mobile-nav__link-icon"> <i class="fa-solid fa-envelope"></i> </span> <span class="mobile-nav__link-text"> Contacts </span> <span class="mobile-nav__link-arrow"> <i class="fa-solid fa-chevron-right"></i> </span> </a> </li> </ul> <!-- Social Links --> <div class="mobile-nav__social"> <span class="mobile-nav__social-label">Follow</span> <div class="mobile-nav__social-links"> <a target="_blank" class="mobile-nav__social-btn" href="https://t.me/foma_des" title="Contact"> <i class="fa-brands fa-telegram"></i> </a><a target="_blank" class="mobile-nav__social-btn" href="https://www.instagram.com/foma_des" title="Photos"> <i class="fa-brands fa-instagram"></i> </a> </div> </div> </div> </div> </nav> </header> <main id="baseContainer" class="parallax-container"> <div id="parallaxFront" class="parallax-front">   <div class="contact-page" data-astro-cid-h2b5pp6l> <main class="contact-page__container" data-astro-cid-h2b5pp6l> <div class="contact-page__card" data-astro-cid-h2b5pp6l> <!-- Header Info --> <div class="contact-page__card-header" data-astro-cid-h2b5pp6l> <div class="contact-page__icon-wrap" data-astro-cid-h2b5pp6l> <i class="fa-solid fa-paper-plane" data-astro-cid-h2b5pp6l></i> </div> <div data-astro-cid-h2b5pp6l> <h1 class="contact-page__card-title" data-astro-cid-h2b5pp6l>Send Message</h1> <p class="contact-page__card-subtitle" data-astro-cid-h2b5pp6l> <span data-astro-cid-h2b5pp6l>To:</span> <strong data-astro-cid-h2b5pp6l>foma.creative.studio@gmail.com</strong> </p> </div> </div> <!-- Motivational Intro Message --> <p class="contact-page__intro" data-astro-cid-h2b5pp6l>Have a project idea, collaboration proposal, or question? Drop us a message — we are always open to new exciting challenges!</p> <!-- 2-Field Form --> <form class="contact-page__form" id="contactPageForm" novalidate data-astro-cid-h2b5pp6l> <!-- Field 1: Reply Email --> <div class="contact-page__field" data-astro-cid-h2b5pp6l> <label for="contactReplyTo" class="contact-page__label" data-astro-cid-h2b5pp6l> <i class="fa-solid fa-at" data-astro-cid-h2b5pp6l></i> Your email <span class="contact-page__required" data-astro-cid-h2b5pp6l>*</span> </label> <input type="email" id="contactReplyTo" name="replyTo" class="contact-page__input" placeholder="name@example.com" required autocomplete="email" data-astro-cid-h2b5pp6l> </div> <!-- Field 2: Message Text --> <div class="contact-page__field" data-astro-cid-h2b5pp6l> <label for="contactMessage" class="contact-page__label" data-astro-cid-h2b5pp6l> <i class="fa-solid fa-comment-dots" data-astro-cid-h2b5pp6l></i> Message text <span class="contact-page__required" data-astro-cid-h2b5pp6l>*</span> </label> <textarea id="contactMessage" name="message" class="contact-page__textarea" rows="6" placeholder="Write your message..." required data-astro-cid-h2b5pp6l></textarea> </div> <!-- Feedback Alert --> <div id="contactPageAlert" class="contact-page__alert" style="display: none;" role="alert" data-error="Please enter a valid email and message text." data-success="Message sent successfully! We will get back to you shortly." data-astro-cid-h2b5pp6l></div> <!-- Submit Button --> <div class="contact-page__actions" data-astro-cid-h2b5pp6l> <button type="submit" id="contactSubmitBtn" class="contact-page__submit-btn" data-astro-cid-h2b5pp6l> <i class="fa-solid fa-paper-plane" data-astro-cid-h2b5pp6l></i> <span id="contactSubmitText" data-default="Send Message" data-sending="Sending..." data-subject-prefix="Website message from " data-body-prefix="From: " data-astro-cid-h2b5pp6l>Send Message</span> </button> </div> </form> </div> </main> </div>  <footer id="footer"> <div class="logo"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" height="33" aria-label="FOMA Creative Studio" role="img" class="logo-svg"> <defs> <linearGradient id="fomaThemeGradient" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" style="stop-color: var(--gradient-stop-1, #3B83BD)"></stop> <stop offset="100%" style="stop-color: var(--gradient-stop-2, #5AA0D3)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon gradient across the entire logo --> <linearGradient id="fomaBurgundyHoverGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-stop-1, #ea2e75)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-stop-2, #9d46e5)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-stop-3, #00b4d8)"></stop> </linearGradient> <!-- Burgundy theme smooth full-icon shadow gradient --> <linearGradient id="fomaBurgundyHoverShadowGrad" gradientUnits="userSpaceOnUse" x1="15" y1="40" x2="205" y2="160"> <stop offset="0%" style="stop-color: var(--logo-hover-shadow-1, #580827)"></stop> <stop offset="45%" style="stop-color: var(--logo-hover-shadow-2, #2b1554)"></stop> <stop offset="100%" style="stop-color: var(--logo-hover-shadow-3, #07355c)"></stop> </linearGradient> </defs> <!-- F: Geometric staircase block with triangle --> <g class="logo-part logo-part--f"> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M15,40 H75 V80 H45 L75,110 H45 V160 H15 Z"></path> </g> <!-- O: Circle --> <g class="logo-part logo-part--o"> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(5, 3.5)"></circle> <circle class="logo-part-shadow" cx="115" cy="60" r="26" transform="translate(2.5, 1.75)" opacity="0.7"></circle> <circle class="logo-part-front" cx="115" cy="60" r="26"></circle> </g> <!-- M: V-chevron block --> <g class="logo-part logo-part--m"> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M90,110 L115,135 L140,110 V160 H90 Z" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M90,110 L115,135 L140,110 V160 H90 Z"></path> </g> <!-- A: Triangle with vertical slit cutout --> <g class="logo-part logo-part--a"> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(5, 3.5)"></path> <path class="logo-part-shadow" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd" transform="translate(2.5, 1.75)" opacity="0.7"></path> <path class="logo-part-front" d="M155,160 L180,110 L205,160 Z M178,138 H182 V160 H178 Z" fill-rule="evenodd"></path> </g> </svg> </div> <nav class="nav"> <div class="nav-item"> <a href="/en" class="link">Home</a> </div> <div class="nav-item"> <a href="/en/store" class="link">Store</a> </div> <div class="nav-item"> <a href="/en/blog" class="link">Blog</a> </div> <div class="nav-item"> <a href="/en/#about" class="link">About</a> </div> </nav> <div class="rights"> 2026 — © All rights reserved. Copying any materials from this resource is prohibited. This can only be done with the written permission of the copyright holder or with a link to the source site. </div> </footer> </div> </main> <script defer src="/scripts/lib/anime.min.js"></script> <!-- New physics-based particle engine --> <script defer src="/scripts/animations/particles-engine.js"></script> <script defer src="/scripts/events.js"></script> <script defer src="/scripts/sections/mobile-navbar.js"></script> <script defer src="/scripts/animations/badges.js"></script> <script defer src="/scripts/animations/hero-text.js"></script> </body> </html>  <script>
+  (function () {
+    "use strict";
+
+    function initContactPageForm() {
+      var form = document.getElementById("contactPageForm");
+      var alertBox = document.getElementById("contactPageAlert");
+      var submitBtn = document.getElementById("contactSubmitBtn");
+      var submitText = document.getElementById("contactSubmitText");
+      var replyInput = document.getElementById("contactReplyTo");
+      var messageInput = document.getElementById("contactMessage");
+
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var replyTo = replyInput ? replyInput.value.trim() : "";
+        var message = messageInput ? messageInput.value.trim() : "";
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!replyTo || !emailRegex.test(replyTo) || !message) {
+          if (alertBox) {
+            alertBox.textContent = alertBox.getAttribute("data-error") || "Error";
+            alertBox.className = "contact-page__alert contact-page__alert--error";
+            alertBox.style.display = "block";
+          }
+          return;
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+        if (submitText) submitText.textContent = submitText.getAttribute("data-sending") || "...";
+
+        setTimeout(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText)
+            submitText.textContent = submitText.getAttribute("data-default") || "Submit";
+
+          if (alertBox) {
+            alertBox.textContent = alertBox.getAttribute("data-success") || "Success";
+            alertBox.className = "contact-page__alert contact-page__alert--success";
+            alertBox.style.display = "block";
+          }
+
+          if (replyInput) replyInput.value = "";
+          if (messageInput) messageInput.value = "";
+
+          try {
+            var subjectPrefix =
+              (submitText && submitText.getAttribute("data-subject-prefix")) ||
+              "Website message from ";
+            var bodyPrefix =
+              (submitText && submitText.getAttribute("data-body-prefix")) || "From: ";
+            var mailtoUrl =
+              "mailto:foma.creative.studio@gmail.com" +
+              "?subject=" +
+              encodeURIComponent(subjectPrefix + replyTo) +
+              "&body=" +
+              encodeURIComponent(bodyPrefix + replyTo + "\n\n" + message);
+            var a = document.createElement("a");
+            a.href = mailtoUrl;
+            a.style.display = "none";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          } catch (err) {}
+        }, 600);
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initContactPageForm);
+    } else {
+      initContactPageForm();
+    }
+  })();
+</script>

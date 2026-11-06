@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 200">
+  <!-- FOMA Creative Studio Logo -->
+  <!-- F: Geometric staircase block -->
+  <path d="M8,8 H100 V85 H48 V120 H80 V148 H48 V195 H8 Z"/>
+  <!-- O: Circle -->
+  <circle cx="122" cy="46" r="28"/>
+  <!-- M: V-chevron -->
+  <polygon points="58,195 80,158 102,195"/>
+  <!-- A: Triangle with vertical slit cutout -->
+  <path d="M135,195 L178,22 L220,195 Z M176,68 L180,68 L180,195 L176,195 Z" fill-rule="evenodd"/>
+
+  <style>
+    path, circle, polygon { fill: #000; }
+    @media (prefers-color-scheme: dark) {
+      path, circle, polygon { fill: #FFF; }
+    }
+  </style>
+</svg>

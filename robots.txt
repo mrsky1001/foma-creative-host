@@ -1,0 +1,5 @@
+User-agent:
+Crawl-delay: 5
+Host: foma-creative.com
+Sitemap: http://foma-creative.com/sitemap-index.xml
+
